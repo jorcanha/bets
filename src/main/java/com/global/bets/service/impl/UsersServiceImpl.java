@@ -1,6 +1,5 @@
 package com.global.bets.service.impl;
 
-import com.global.bets.infrastructure.event.publisher.UserRegisteredEventPublisher;
 import com.global.bets.model.dto.UsersDto;
 import com.global.bets.model.entity.Users;
 import com.global.bets.repository.UsersRepository;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Service;
 public class UsersServiceImpl implements UsersService {
 
 	private final UsersRepository usersRepository;
-	private final UserRegisteredEventPublisher userRegisteredEventPublisher;
 
 	public String register(UsersDto usersDto) {
 		Users user = Users
@@ -29,7 +27,6 @@ public class UsersServiceImpl implements UsersService {
 				.build();
 		log.info("Registering user on Database: {}", user.getFirstName());
 		usersRepository.save(user);
-		userRegisteredEventPublisher.publishEvent("UserRegisteredEvent: " + user.getFirstName());
 		return "Register";
 	}
 }
