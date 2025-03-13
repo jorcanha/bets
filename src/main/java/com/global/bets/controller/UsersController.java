@@ -23,7 +23,7 @@ public class UsersController {
 
 	private final UsersService usersService;
 
-	@PostMapping("register")
+	@PostMapping("/register")
 	@Operation(summary = "")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "", content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = String.class)) })

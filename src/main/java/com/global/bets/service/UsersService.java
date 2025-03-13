@@ -4,5 +4,5 @@ import com.global.bets.model.dto.UsersDto;
 
 public interface UsersService {
 
-	public String register(UsersDto usersDto);
+	String register(UsersDto usersDto);
 }

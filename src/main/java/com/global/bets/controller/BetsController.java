@@ -22,7 +22,7 @@ public class BetsController {
 
 	private final BetsService betsService;
 
-	@PostMapping("win")
+	@PostMapping("/win")
 	@Operation(summary = "")
 	@ApiResponses(value = {
 		@ApiResponse(responseCode = "200", description = "", content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = String.class)) })
@@ -31,7 +31,7 @@ public class BetsController {
 		return ResponseEntity.status(HttpStatus.OK).body(betsService.win(betsDto));
 	}
 
-	@PostMapping("lose")
+	@PostMapping("/lose")
 	@Operation(summary = "")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "", content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = String.class)) })

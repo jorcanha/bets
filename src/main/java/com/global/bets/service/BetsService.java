@@ -4,6 +4,6 @@ import com.global.bets.model.dto.BetsDto;
 
 public interface BetsService {
 
-	public String win(BetsDto betsDto);
-	public String lose(BetsDto betsDto);
+	String win(BetsDto betsDto);
+	String lose(BetsDto betsDto);
 }
